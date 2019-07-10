@@ -90,7 +90,7 @@ unbiased = [[0],
 	    [0],
 	    [0],
 	    [0]]
-biased = [[0],
+biased =   [[0],
 	    [0],
 	    [0],
 	    [0],
@@ -106,7 +106,7 @@ biased = [[0],
 	    [0],
 	    [0],
 	    [0]]
-layer = [[0],
+layer =    [[0],
 	    [0],
 	    [0],
 	    [0],
@@ -191,6 +191,8 @@ totalputs = [[0],[0],[0],[0],[0],[0],[0],[0],[0]]
 outputbias = [[0],[0],[0],[0],[0],[0],[0],[0],[0]]
 sigfood = [[0],[0],[0],[0],[0],[0],[0],[0],[0]]
 ultimate = [[0],[0],[0],[0],[0],[0],[0],[0],[0]]
+for kkr in range(0,len(totalputs)):
+		totalputs[kkr][0] = ansaa[0][kkr][0]+ansaa[1][kkr][0]+ansaa[2][kkr][0]+ansaa[3][kkr][0]+ansaa[4][kkr][0]+ansaa[5][kkr][0]+ansaa[6][kkr][0]+ansaa[7][kkr][0]+ansaa[8][kkr][0]+ansaa[9][kkr][0]+ansaa[10][kkr][0]+ansaa[11][kkr][0]+ansaa[12][kkr][0]+ansaa[13][kkr][0]+ansaa[14][kkr][0]+ansaa[15][kkr][0]+ansaa[16][kkr][0]+ansaa[17][kkr][0]+ansaa[18][kkr][0]
 def output(inputa,layer,outputweightin,outputweightlay,outputbias):
 	for kkr in range(0,len(ansaa)):
 		for j in range(0,len(ansaa[0])):
@@ -221,33 +223,6 @@ for ikkk in range(0, len(outputbias)):
 def decide(inputa,layerweight,layerbias,outputweightin,outputweightlay,outputbias)
 	layer(inputa,layerweight,layerbias)
 	output(inputa,layer,outputweightin,outputweightlay,outputbias)
-	if(xround==0)
-		xra=inputa
-		xaltimate=ultimate
-	if(xround==1)
-		xrb=inputa
-		xbltimate=ultimate
-	if(xround==2)
-		xrc=inputa
-		xcltimate=ultimate
-	if(xround==3)
-		xrd=inputa
-		xdltimate=ultimate
-	if(xround==4)
-		xre=inputa
-		xeltimate=ultimate
-	if(oround==0)
-		oraa=inputa
-		oaltimate=ultimate
-	if(oround==1)
-		orbb=inputa
-		obltimate=ultimate
-	if(oround==2)
-		orcc=inputa
-		ocltimate=ultimate
-	if(oround==3)
-		ordd=inputa
-		odltimate=ultimate
 	if(ultimate[0][0]>ultimate[1][0]and ultimate[0][0]>ultimate[2][0]and ultimate[0][0]>ultimate[3][0]and ultimate[0][0]>ultimate[4][0]and ultimate[0][0]>ultimate[5][0]and ultimate[0][0]>ultimate[6][0]and ultimate[0][0]>ultimate[7][0]and ultimate[0][0]>ultimate[8][0]):
 		deci=1
 	if(ultimate[1][0]>ultimate[0][0]and ultimate[1][0]>ultimate[2][0]and ultimate[1][0]>ultimate[3][0]and ultimate[1][0]>ultimate[4][0]and ultimate[1][0]>ultimate[5][0]and ultimate[1][0]>ultimate[6][0]and ultimate[1][0]>ultimate[7][0]and ultimate[1][0]>ultimate[8][0]):
@@ -284,6 +259,137 @@ def decide(inputa,layerweight,layerbias,outputweightin,outputweightlay,outputbia
 		choice='h'
 	if(deci==9):
 		choice='i'
+	if(xround==deci)
+		xra=inputa
+		xaltimate=ultimate
+		xalayer=layer
+		xrainput=ansaa
+		xralayer=ansaz
+		xafull=totalputs
+		xraf=ansa
+		xadeci=deci
+	if(xround==(deci-1))
+		xrb=inputa
+		xbltimate=ultimate
+		xblayer=layer
+		xrbinput=ansaa
+		xrblayer=ansaz
+		xbfull=totalputs
+		xrbf=ansa
+		xbdeci=deci
+	if(xround==(deci-2))
+		xrc=inputa
+		xcltimate=ultimate
+		xclayer=layer
+		xrcinput=ansaa
+		xrclayer=ansaz
+		xcfull=totalputs
+		xrcf=ansa
+		xcdeci=deci
+	if(xround==(deci-3))
+		xrd=inputa
+		xdltimate=ultimate
+		xdlayer=layer
+		xrdinput=ansaa
+		xrdlayer=ansaz
+		xdfull=totalputs
+		xrdf=ansa
+		xddeci=deci
+	if(xround==(deci-4))
+		xre=inputa
+		xeltimate=ultimate
+		xelayer=layer
+		xreinput=ansaa
+		xrelayer=ansaz
+		xefull=totalputs
+		xref=ansa
+		xedeci=deci
+	if(oround==deci)
+		oraa=inputa
+		oaltimate=ultimate
+		oalayer=layer
+		orainput=ansaa
+		oralayer=ansaz
+		oafull=totalputs
+		oraf=ansa
+		oadeci=deci
+	if(oround==(deci-1))
+		orbb=inputa
+		obltimate=ultimate
+		oblayer=layer
+		orbinput=ansaa
+		orblayer=ansaz
+		obfull=totalputs
+		orbf=ansa
+		obdeci=deci
+	if(oround==(deci-2))
+		orcc=inputa
+		ocltimate=ultimate
+		oclayer=layer
+		orcinput=ansaa
+		orclayer=ansaz
+		ocfull=totalputs
+		orcf=ansa
+		ocdeci=deci
+	if(oround==(deci-3))
+		ordd=inputa
+		odltimate=ultimate
+		odlayer=layer
+		ordinput=ansaa
+		ordlayer=ansaz
+		odfull=totalputs
+		ordf=ansa
+		oddeci=deci
+def gitgood(xround,oround,win,xra,xaltimate,xalayer,xrainput,xralayer,xafull,xraf,xadeci,xrb,xbltimate,xblayer,xrbinput,xrblayer,xbfull,xrbf,xbdeci,xrc,xcltimate,xclayer,xrcinput,xrclayer,xcfull,xrcf,xcdeci,xrd,xdltimate,xdlayer,xrdinput,xrdlayer,xdfull,xrdf,xddeci,xre,xeltimate,xelayer,xreinput,xrelayer,xefull,xref,xedeci,oraa,oaltimate,oalayer,orainput,oralayer,oafull,oraf,oadeci,orbb,obltimate,oblayer,orbinput,orblayer,obfull,orbf,obdeci,orcc,ocltimate,oclayer,orcinput,orclayer,ocfull,orcf,ocdeci,ordd,odltimate,odlayer,ordinput,ordlayer,odfull,ordf,oddeci):
+	if(xround=3):
+		ctplr=1/10
+		btplr=2/10
+		atplr=1
+		dtplr=0
+		etplr=0
+	if(xround=4):
+		ctplr=1/10
+		btplr=2/10
+		atplr=1
+		dtplr=1/20
+		etplr=0
+	if(xround=5):
+		ctplr=1/10
+		btplr=2/10
+		atplr=1
+		dtplr=1/20
+		etplr=1/20
+	if(oround=2):
+		ckplr=0
+		bkplr=2/10
+		akplr=1
+		dkplr=0
+		ekplr=0
+	if(oround=3):
+		ckplr=1/10
+		bkplr=2/10
+		akplr=1
+		dkplr=0
+		ekplr=0
+	if(oround=4):
+		ckplr=2/10
+		bkplr=1/10
+		akplr=1/20
+		dkplr=1/20
+		ekplr=0
+	if(win==x):
+		xtargetaa=((1-xaltimate[xadeci][0])*atplr+xaltimate[xadeci][0]
+		if(xtargetaa>1):
+			xtargetaa=1
+		pobxaa=xaltimate[xadeci][0]-(1/1+math.exp(-1(xafull[deci][0]))
+		potpxaa=xaltimate[xadeci][0]-(1/1+math.exp(-1(outputbias[xadeci][0]))
+		y=1
+		z=y+potb-pob
+		x=-1(math.log(1-xtargetaa/xtargetaa))/(y*xafull[xadeci][0]+z*outputbias[xadeci][0])
+		outputbias[xadeci][0]=z*x*outputbias[xadeci][0]
+		xafull[xadeci][0]=y*x*xafull[xadeci]
+		for i in range(0,len(xrainput))
+		xafull[xadeci][0]=xrainput[i][xadeci][0]+xralayer[][xadeci][0]
 for evo in range(0,100000):
 	a = "#"
 	b = "#"
@@ -401,7 +507,7 @@ for evo in range(0,100000):
         
     		if ((a=='x' and b=='x' and c=='x') or (d=='x' and e=='x' and f=='x') or (g=='x' and h=='x' and i=='x') or (a=='x' and d=='x' and g=='x') or (b=='x' and e=='x' and h=='x') or (c=='x' and f=='x' and i=='x') or (a=='x' and e=='x' and i=='x') or (c=='x' and e=='x' and g=='x')):
         	xwin = 1
-        #tell network it is trash and good
+				gitgood(xround,oround,win,xra,xaltimate,xalayer,xrainput,xralayer,xafull,xraf,xadeci,xrb,xbltimate,xblayer,xrbinput,xrblayer,xbfull,xrbf,xbdeci,xrc,xcltimate,xclayer,xrcinput,xrclayer,xcfull,xrcf,xcdeci,xrd,xdltimate,xdlayer,xrdinput,xrdlayer,xdfull,xrdf,xddeci,xre,xeltimate,xelayer,xreinput,xrelayer,xefull,xref,xedeci,oraa,oaltimate,oalayer,orainput,oralayer,oafull,oraf,oadeci,orbb,obltimate,oblayer,orbinput,orblayer,obfull,orbf,obdeci,orcc,ocltimate,oclayer,orcinput,orclayer,ocfull,orcf,ocdeci,ordd,odltimate,odlayer,ordinput,ordlayer,odfull,ordf,oddeci)
         	break
     		oplace = 0
     		while(oplace == 0):
@@ -506,5 +612,5 @@ for evo in range(0,100000):
         		
     			if ((a=='o' and b=='o' and c=='o') or (d=='o' and e=='o' and f=='o') or (g=='o' and h=='o' and i=='o') or (a=='o' and d=='o' and g=='o') or (b=='o' and e=='o' and h=='o') or (c=='o' and f=='o' and i=='o') or (a=='o' and e=='o' and i=='o') or (c=='o' and e=='o' and g=='o')):
         			owin = 1
-        #tell network it is trash and good 
+        			gitgood(xround,oround,win,xra,xaltimate,xalayer,xrainput,xralayer,xafull,xraf,xadeci,xrb,xbltimate,xblayer,xrbinput,xrblayer,xbfull,xrbf,xbdeci,xrc,xcltimate,xclayer,xrcinput,xrclayer,xcfull,xrcf,xcdeci,xrd,xdltimate,xdlayer,xrdinput,xrdlayer,xdfull,xrdf,xddeci,xre,xeltimate,xelayer,xreinput,xrelayer,xefull,xref,xedeci,oraa,oaltimate,oalayer,orainput,oralayer,oafull,oraf,oadeci,orbb,obltimate,oblayer,orbinput,orblayer,obfull,orbf,obdeci,orcc,ocltimate,oclayer,orcinput,orclayer,ocfull,orcf,ocdeci,ordd,odltimate,odlayer,ordinput,ordlayer,odfull,ordf,oddeci)
 				break
