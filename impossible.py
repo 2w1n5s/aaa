@@ -198,8 +198,8 @@ def output(inputa,layer,outputweightin,outputweightlay,outputbias):
 		for j in range(0,len(ansaa[0])):
 			for i in range(o,len(ansaa[0])):
 				for k in range(0,len(ansaz)):
-					ansaa[kkr][j][0] = inputa[kkr][0]*outputweightin[j][i]
-					ansaz[k][j][0] = layer[k][0]*outputweightlay[j][i]
+					ansaa[kkr][j][0] = inputa[kkr][0]*outputweightin[j][kkr]
+					ansaz[k][j][0] = layer[k][0]*outputweightlay[j][k]
 	for kkr in range(0,len(totalputs)):
 		totalputs[kkr][0] = ansaa[0][kkr][0]+ansaa[1][kkr][0]+ansaa[2][kkr][0]+ansaa[3][kkr][0]+ansaa[4][kkr][0]+ansaa[5][kkr][0]+ansaa[6][kkr][0]+ansaa[7][kkr][0]+ansaa[8][kkr][0]+ansaa[9][kkr][0]+ansaa[10][kkr][0]+ansaa[11][kkr][0]+ansaa[12][kkr][0]+ansaa[13][kkr][0]+ansaa[14][kkr][0]+ansaa[15][kkr][0]+ansaa[16][kkr][0]+ansaa[17][kkr][0]+ansaa[18][kkr][0]+ansaz[0][kkr][0]+ansaz[1][kkr][0]+ansaz[2][kkr][0]+ansaz[3][kkr][0]+ansaz[4][kkr][0]+ansaz[5][kkr][0]+ansaz[6][kkr][0]+ansaz[7][kkr][0]+ansaz[8][kkr][0]+ansaz[9][kkr][0]+ansaz[10][kkr][0]+ansaz[11][kkr][0]+ansaz[12][kkr][0]+ansaz[13][kkr][0]+ansaz[14][kkr][0]+ansaz[15][kkr][0]
 	for kkr in range(0,len(outputbias)):
@@ -432,12 +432,24 @@ def gitgood(xround,oround,win,xra,xaltimate,xalayer,xrainput,xralayer,xafull,xra
 						target=0
 				pob=(bias[i][0]/(bias[i][0]+totalputs[i][0])*77
 				potp=(totalputs[i][0]/(bias[i][0]+totalputs)*77
-				x+pob=y+potp
+				y=1
+				x=y+potp-pob
 				z=(log((1-target)/target))/(y*bias[i][0]+x*totalputs[i][0])
 				bias=bias*y*z
 				sum=0
 				sub=0
-				for i in range	
+				for kkr in range(0,len(ansaa)):
+					sum=sum+ansaa[kkr][i][0]
+				for j in range(0,len(ansaz)):
+					sub=sub+ansaz[j][i][0]
+				inputgit=x*z*totalputs[i][0]*(sum/totalputs[i][0])
+				layergit=x*z*totalputs[i][0]*(sub/totalputs[i][0])
+				for ik in range(0,len(ansaz)):
+					laweiin=(ansaz[ik][i][0]/sub)*layergit
+					y=1
+					z=y+layer[ik][0]
+									
+						
 for evo in range(0,100000):
 	a = "#"
 	b = "#"
