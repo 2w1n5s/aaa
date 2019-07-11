@@ -259,7 +259,7 @@ def decide(inputa,layerweight,layerbias,outputweightin,outputweightlay,outputbia
 		choice='h'
 	if(deci==9):
 		choice='i'
-	if(xround==deci)
+	if(xround==5):
 		xra=inputa
 		xaltimate=ultimate
 		xalayer=layer
@@ -268,7 +268,7 @@ def decide(inputa,layerweight,layerbias,outputweightin,outputweightlay,outputbia
 		xafull=totalputs
 		xraf=ansa
 		xadeci=deci
-	if(xround==(deci-1))
+	if(xround==4):
 		xrb=inputa
 		xbltimate=ultimate
 		xblayer=layer
@@ -277,7 +277,7 @@ def decide(inputa,layerweight,layerbias,outputweightin,outputweightlay,outputbia
 		xbfull=totalputs
 		xrbf=ansa
 		xbdeci=deci
-	if(xround==(deci-2))
+	if(xround==3):
 		xrc=inputa
 		xcltimate=ultimate
 		xclayer=layer
@@ -286,7 +286,7 @@ def decide(inputa,layerweight,layerbias,outputweightin,outputweightlay,outputbia
 		xcfull=totalputs
 		xrcf=ansa
 		xcdeci=deci
-	if(xround==(deci-3))
+	if(xround==2):
 		xrd=inputa
 		xdltimate=ultimate
 		xdlayer=layer
@@ -295,7 +295,7 @@ def decide(inputa,layerweight,layerbias,outputweightin,outputweightlay,outputbia
 		xdfull=totalputs
 		xrdf=ansa
 		xddeci=deci
-	if(xround==(deci-4))
+	if(xround==1):
 		xre=inputa
 		xeltimate=ultimate
 		xelayer=layer
@@ -304,7 +304,7 @@ def decide(inputa,layerweight,layerbias,outputweightin,outputweightlay,outputbia
 		xefull=totalputs
 		xref=ansa
 		xedeci=deci
-	if(oround==deci)
+	if(oround==4):
 		oraa=inputa
 		oaltimate=ultimate
 		oalayer=layer
@@ -313,7 +313,7 @@ def decide(inputa,layerweight,layerbias,outputweightin,outputweightlay,outputbia
 		oafull=totalputs
 		oraf=ansa
 		oadeci=deci
-	if(oround==(deci-1))
+	if(oround==3):
 		orbb=inputa
 		obltimate=ultimate
 		oblayer=layer
@@ -322,7 +322,7 @@ def decide(inputa,layerweight,layerbias,outputweightin,outputweightlay,outputbia
 		obfull=totalputs
 		orbf=ansa
 		obdeci=deci
-	if(oround==(deci-2))
+	if(oround==2):
 		orcc=inputa
 		ocltimate=ultimate
 		oclayer=layer
@@ -331,7 +331,7 @@ def decide(inputa,layerweight,layerbias,outputweightin,outputweightlay,outputbia
 		ocfull=totalputs
 		orcf=ansa
 		ocdeci=deci
-	if(oround==(deci-3))
+	if(oround==1):
 		ordd=inputa
 		odltimate=ultimate
 		odlayer=layer
@@ -341,24 +341,7 @@ def decide(inputa,layerweight,layerbias,outputweightin,outputweightlay,outputbia
 		ordf=ansa
 		oddeci=deci
 def gitgood(xround,oround,win,xra,xaltimate,xalayer,xrainput,xralayer,xafull,xraf,xadeci,xrb,xbltimate,xblayer,xrbinput,xrblayer,xbfull,xrbf,xbdeci,xrc,xcltimate,xclayer,xrcinput,xrclayer,xcfull,xrcf,xcdeci,xrd,xdltimate,xdlayer,xrdinput,xrdlayer,xdfull,xrdf,xddeci,xre,xeltimate,xelayer,xreinput,xrelayer,xefull,xref,xedeci,oraa,oaltimate,oalayer,orainput,oralayer,oafull,oraf,oadeci,orbb,obltimate,oblayer,orbinput,orblayer,obfull,orbf,obdeci,orcc,ocltimate,oclayer,orcinput,orclayer,ocfull,orcf,ocdeci,ordd,odltimate,odlayer,ordinput,ordlayer,odfull,ordf,oddeci):
-	if(xround=3):
-		ctplr=1/10
-		btplr=2/10
-		atplr=1
-		dtplr=0
-		etplr=0
-	if(xround=4):
-		ctplr=1/10
-		btplr=2/10
-		atplr=1
-		dtplr=1/20
-		etplr=0
-	if(xround=5):
-		ctplr=1/10
-		btplr=2/10
-		atplr=1
-		dtplr=1/20
-		etplr=1/20
+	
 	if(oround=2):
 		ckplr=0
 		bkplr=2/10
@@ -378,18 +361,83 @@ def gitgood(xround,oround,win,xra,xaltimate,xalayer,xrainput,xralayer,xafull,xra
 		dkplr=1/20
 		ekplr=0
 	if(win==x):
-		xtargetaa=((1-xaltimate[xadeci][0])*atplr+xaltimate[xadeci][0]
-		if(xtargetaa>1):
-			xtargetaa=1
-		pobxaa=xaltimate[xadeci][0]-(1/1+math.exp(-1(xafull[deci][0]))
-		potpxaa=xaltimate[xadeci][0]-(1/1+math.exp(-1(outputbias[xadeci][0]))
-		y=1
-		z=y+potb-pob
-		x=-1(math.log(1-xtargetaa/xtargetaa))/(y*xafull[xadeci][0]+z*outputbias[xadeci][0])
-		outputbias[xadeci][0]=z*x*outputbias[xadeci][0]
-		xafull[xadeci][0]=y*x*xafull[xadeci]
-		for i in range(0,len(xrainput))
-		xafull[xadeci][0]=xrainput[i][xadeci][0]+xralayer[][xadeci][0]
+		time=0
+		for i in range(len(xround),0):
+			time=time+1
+				if(time==1):
+					xyz=1
+				if(time==2):
+					xyz=1/10
+				if(time==3):
+					xyz=1/20
+				if(time==4):
+					xyz=1/25
+				if(time==5):
+					xyz=1/40
+			if(i==5):
+				input=xra
+				output=xaltimate
+				layer=xalayer
+				ansaa=xrainput
+				ansaz=xralayer
+				totalputs=xafull
+				ansa=xraf
+				deci=xadeci
+
+			if(i==4):
+				input=xrb
+				output=xbltimate
+				layer=xblayer
+				ansaa=xrbinput
+				ansaz=xrblayer
+				totalputs=xbfull
+				ansa=xrbf
+				deci=xbdeci
+			if(i==3):
+				input=xrc
+				output=xcltimate
+				layer=xclayer
+				ansaa=xrcinput
+				ansaz=xrclayer
+				totalputs=xcfull
+				ansa=xrcf
+				deci=xcdeci
+			if(i==2):
+				input=xrd
+				output=xdltimate
+				layer=xdlayer
+				ansaa=xrdinput
+				ansaz=xrdlayer
+				totalputs=xdfull
+				ansa=xrdf
+				deci=xddeci
+			if(i==1):
+				input=xre
+				output=xeltimate
+				layer=xelayer
+				ansaa=xreinput
+				ansaz=xrelayer
+				totalputs=xefull
+				ansa=xref
+				deci=xedeci
+				time=0
+			for i in range(0,len,output):
+				if(i==deci):
+					target=(1-output[i][0])*xyz+output[i][0]
+					if(target>1):
+						target=1
+				else
+					target=(0-output[i][0])*xyz+output[i][0]
+					if(target<0):
+						target=0
+				pob=(bias[i][0]/(bias[i][0]+totalputs[i][0])*77
+				potp=(totalputs[i][0]/(bias[i][0]+totalputs)*77
+				x+pob=y+potp
+				z=(log((1-target)/target))/(y*bias[i][0]+x*totalputs[i][0])
+				bias=bias*y*z
+				sum=0
+				sub=0
+				for i in range	
 for evo in range(0,100000):
 	a = "#"
 	b = "#"
